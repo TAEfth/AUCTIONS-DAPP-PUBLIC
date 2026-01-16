@@ -1,0 +1,445 @@
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      padding: 20px; 
+      max-width: 1400px; 
+      margin: 0 auto; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    h2, h3, h4 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    
+    /* Header Info Section */
+    .header-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 1px solid #ddd;
+    }
+    
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .info-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .info-label {
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 14px;
+    }
+    
+    .info-value {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      color: #3498db;
+      font-size: 14px;
+    }
+    
+    .info-value.eth {
+      color: #f39c12;
+    }
+    
+    /* Auction Lists */
+    .auction-section {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 30px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    
+    .auction-header {
+      display: grid;
+      grid-template-columns: 60px 150px 200px 120px 150px 120px 120px 150px;
+      gap: 12px;
+      padding: 15px;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .auction-item {
+      display: grid;
+      grid-template-columns: 60px 150px 200px 120px 150px 120px 120px 150px;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      align-items: center;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .auction-item:hover {
+      background: #f8f9fa;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .auction-item.ended {
+      background: #fff8e1;
+      border-left: 4px solid #ffc107;
+    }
+    
+    .auction-item.cancelled {
+      background: #ffebee;
+      border-left: 4px solid #f44336;
+    }
+    
+    .auction-item.fulfilled {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+    }
+    
+    /* Address display */
+    .address {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #3498db;
+      background: #f8f9fa;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    /* Status badges */
+    .status {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      min-width: 100px;
+    }
+    
+    .status.active {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status.ended {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+    }
+    
+    .status.cancelled {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .status.fulfilled {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+    
+    /* Role badges */
+    .role {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      min-width: 100px;
+    }
+    
+    .role.seller {
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      color: #155724;
+      border: 1px solid #b1dfbb;
+    }
+    
+    .role.bidder {
+      background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+      color: #0c5460;
+      border: 1px solid #abdde5;
+    }
+    
+    .role.spectator {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #6c757d;
+      border: 1px solid #dee2e6;
+    }
+    
+    /* Buttons */
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+    
+    button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-bid {
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+    }
+    
+    .btn-cancel {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+    }
+    
+    .btn-fulfill {
+      background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+      color: white;
+    }
+    
+    .btn-claim {
+      background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+      color: #212529;
+    }
+    
+    .btn-create {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+    
+    .btn-refresh {
+      background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+      color: white;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 10px 15px;
+    }
+    
+    /* Form controls */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #495057;
+    }
+    
+    input, select {
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      width: 300px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+    
+    /* Bid controls */
+    .bid-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .bid-input {
+      width: 120px;
+      padding: 8px 12px;
+      border: 2px solid #28a745;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    
+    /* Create Auction Form */
+    .create-form {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px dashed #6c757d;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    
+    /* Status messages */
+    .status-message {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .status-message.success {
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      color: #155724;
+      border: 1px solid #b1dfbb;
+    }
+    
+    .status-message.error {
+      background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+      color: #721c24;
+      border: 1px solid #f1b0b7;
+    }
+    
+    .status-message.info {
+      background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+      color: #0c5460;
+      border: 1px solid #abdde5;
+    }
+    
+    /* Connection status */
+    .connection-status {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .connected {
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: white;
+    }
+    
+    .disconnected {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+    }
+    
+    /* Price display */
+    .price {
+      font-weight: bold;
+      color: #27ae60;
+      font-size: 16px;
+    }
+    
+    /* Time display */
+    .time-left {
+      font-family: 'Courier New', monospace;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+    
+    /* No items message */
+    .no-items {
+      text-align: center;
+      padding: 40px;
+      color: #6c757d;
+      font-style: italic;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border: 2px dashed #dee2e6;
+    }
+    
+    /* Grid layout */
+    .sections-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .auction-header,
+      .auction-item {
+        grid-template-columns: 50px 120px 150px 100px 120px 100px 100px 120px;
+        font-size: 12px;
+      }
+      
+      .header-info {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .sections-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+    }
+ 
